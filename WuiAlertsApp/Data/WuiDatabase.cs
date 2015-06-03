@@ -24,7 +24,7 @@ namespace WuiAlertsApp
 		{
 			database = DependencyService.Get<ISQLite> ().GetConnection ();
 			// create the tables
-			database.CreateTable<TodoItem>();
+			//database.CreateTable<TodoItem>();
 			database.CreateTable<Vehicle>();
 			database.CreateTable<User>();
 			database.CreateTable<WuiAlert>();
@@ -205,6 +205,7 @@ namespace WuiAlertsApp
 					userSettings.Language = user.Language;
 					userSettings.Phone = user.Phone;
 					userSettings.Email = user.Email;
+					userSettings.Vehicles = user.Vehicles;
 
 					database.Update(userSettings);
 
