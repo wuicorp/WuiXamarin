@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace WuiAlertsApp.Models
 {
@@ -20,9 +21,9 @@ namespace WuiAlertsApp.Models
 		public bool Sound { get; set; }
 		public int Language { get; set; }
 
-		//[OneToMany]
+		[OneToMany]
 		//[ManyToOne] 
-		//public IEnumerable<Vehicle> Vehicles{ get; set; }
+		public IEnumerable<Vehicle> Vehicles{ get; set; }
 	}
 }
 
