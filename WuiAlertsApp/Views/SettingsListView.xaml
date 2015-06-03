@@ -87,6 +87,26 @@
 	                    </ViewCell.View>
 	                </ViewCell>
 				</TableSection>
+      
+        <!--<TableSection Title="Vehicles">
+					<ListView ItemSource="{Binding Vehicles}">
+              <DataTemplate>
+                <ViewCell>
+                  <ViewCell.View>
+                    <StackLayout Orientation="Horizontal">
+                      <StackLayout Orientation="Vertical"
+                                   HorizontalOptions="StartAndExpand">
+
+                        <Label Text="{Binding Id}" />
+                        <Label Text="{Binding Identifier}" HorizontalOptions="FillAndExpand"/>
+
+                      </StackLayout>
+                    </StackLayout>
+                  </ViewCell.View>
+                </ViewCell>
+              </DataTemplate>
+          </ListView>
+				</TableSection>-->
 			</TableRoot>
 		</TableView>
 	</ContentPage.Content>

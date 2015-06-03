@@ -31,8 +31,8 @@ namespace WuiAlertsApp.Pages
 		{
 			BindingContext = viewModel;
 
-			this.SetBinding(Page.TitleProperty, "Title");
-			this.SetBinding(Page.IconProperty, "Icon");
+            //this.SetBinding(Page.TitleProperty, "Title");
+            //this.SetBinding(Page.IconProperty, "Icon");
 
 			Map map = MakeMap();
 			var stack = new StackLayout { Spacing = 0 };
@@ -120,10 +120,11 @@ namespace WuiAlertsApp.Pages
 			currentLocationBtn.Text = "GetCurrentLocation";
 
 			currentLocationBtn.Clicked += async (e, a) => {
-				var helper = new GeolocationHelper2();
-				await helper.GetPosition();
-				currentLocationBtn.Text = helper.PositionLatitude;
+                //var helper = new GeolocationHelper2();
+                //await helper.GetPosition();
+                //currentLocationBtn.Text = helper.PositionLatitude;
 
+			    var tt = await GeolocationHelper.GetCurrentPosition(10000);
 
 //				var tt = await GetPositionAsync();
 //				currentLocationBtn.Text = "Lat: " + tt.Latitude;

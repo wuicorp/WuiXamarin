@@ -39,6 +39,12 @@ namespace WuiAlertsApp.ViewModels
 				SelectedLanguage = 0;
 				Email = "";
 				Phone = "";
+                
+                Vehicles = new ObservableCollection<Vehicle>
+                    {
+                        new Vehicle{Identifier="1234-AC"},
+                        new Vehicle{Identifier="4321-AC"},
+                    };
 			} 
 			else 
 			{
@@ -48,6 +54,10 @@ namespace WuiAlertsApp.ViewModels
 				SelectedLanguage = _userSettings.Language;
 				Email = _userSettings.Email;
 				Phone = _userSettings.Phone;
+				if (_userSettings.Vehicles!=null)
+                	Vehicles = new ObservableCollection<Vehicle>(_userSettings.Vehicles);
+				else
+					Vehicles = new ObservableCollection<Vehicle>();
 			}
 
 			this.SaveSettingsCommand = new Command<string>((parameter) => SaveSettings());
@@ -149,6 +159,19 @@ namespace WuiAlertsApp.ViewModels
 				OnPropertyChanged("Phone");
 			}
 		}
+
+
+        private ObservableCollection<Vehicle> _vehicles;
+        public ObservableCollection<Vehicle> Vehicles
+        {
+            get { return _vehicles; }
+            set
+            {
+                _vehicles = value;
+                OnPropertyChanged("Vehicles");
+            }
+        }
+
 	}
 }
 

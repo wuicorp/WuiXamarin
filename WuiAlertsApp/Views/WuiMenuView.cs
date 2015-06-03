@@ -227,7 +227,55 @@ namespace WuiAlertsApp.Views
 			}, 0, 0);
 				
 			ToolbarItems.Add (tbiMap);
+
+
+            var tbiVehicles = new ToolbarItem("Vehicles", "ic_car.png", () =>
+            {
+                var viewModel = new VehiclesViewModel(this.Navigation);
+                //BindingContext = viewModel;
+
+                var vehiclesListView = new VehiclesListView();
+                vehiclesListView.BindingContext = viewModel;
+
+                var newVehicle = new ToolbarItem
+                {
+                    Command = viewModel.NewVehicleCommand,
+                    Icon = "ic_action_new",
+                    Text = "New",
+                    Priority = 0,
+                    Order = ToolbarItemOrder.Default
+                };
+
+
+                var saveSettings = new ToolbarItem
+                {
+                    Command = viewModel.SaveSettingsCommand,
+                    Icon = "ic_action_save",
+                    Text = "Save",
+                    Priority = 0,
+                    Order = ToolbarItemOrder.Default
+                };
+
+                var cancelSettings = new ToolbarItem
+                {
+                    Command = viewModel.CancelSettingsCommand,
+                    Icon = "ic_action_undo",
+                    Text = "Undo",
+                    Priority = 0,
+                    Order = ToolbarItemOrder.Default
+                };
+
+					vehiclesListView.ToolbarItems.Add(newVehicle);
+                vehiclesListView.ToolbarItems.Add(cancelSettings);
+                vehiclesListView.ToolbarItems.Add(saveSettings);
+
+                var ee = Navigation.PushAsync(vehiclesListView);
+
+            }, 0, 0);
+
+			ToolbarItems.Add(tbiVehicles);
 		}
+
 		public MapPage Map { get; private set; }
 	}
 }
