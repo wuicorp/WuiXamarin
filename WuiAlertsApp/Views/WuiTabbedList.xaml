@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage x:Class="WuiAlertsApp.Views.WuiTabbedList"
+			xmlns="http://xamarin.com/schemas/2014/forms" 
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			xmlns:local="clr-namespace:WuiAlertsApp.Helpers;assembly=WuiAlertsApp"
+			Title="Wuis" >
+	<TabbedPage.Children>
+		<ContentPage Title="Sent">
+			<ContentPage.Resources>
+		        <ResourceDictionary>
+		            <local:WuiTypeToImageConverter x:Key="ImageConverter"></local:WuiTypeToImageConverter>
+		        </ResourceDictionary>
+	        </ContentPage.Resources>
+			<ContentPage.Content>
+				<ScrollView>
+				    <ListView ItemsSource="{Binding SentWuis}" RowHeight = "100" SelectedItem="{Binding SelectedWui}">
+				    	<ListView.ItemTemplate>
+			    			<DataTemplate>
+			    				<ViewCell >
+			    					<Grid BackgroundColor="White">
+			    						<Grid.RowDefinitions>
+									      <RowDefinition Height="Auto" />
+									      <RowDefinition Height="Auto" />
+									      <RowDefinition Height="Auto" />
+									    </Grid.RowDefinitions>
+									    <Grid.ColumnDefinitions>
+									      <ColumnDefinition Width="Auto" />
+									      <ColumnDefinition Width="*" />
+									    </Grid.ColumnDefinitions>
+
+									    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Type, Converter={StaticResource ImageConverter}}"/>
+										<Label Grid.Row="0" Grid.Column="1" Text="{Binding Type}" FontSize="16" XAlign="Center"/>
+										<Label Grid.Row="1" Grid.Column="1" Text="{Binding Status}" FontSize="12"/>
+		    						</Grid>
+			    				</ViewCell>
+			    			</DataTemplate>
+				    	</ListView.ItemTemplate>
+				    </ListView>
+				</ScrollView>
+			</ContentPage.Content>
+		</ContentPage>
+
+		<ContentPage Title="Received">
+			<ContentPage.Resources>
+		        <ResourceDictionary>
+		            <local:WuiTypeToImageConverter x:Key="ImageConverter"></local:WuiTypeToImageConverter>
+		        </ResourceDictionary>
+	        </ContentPage.Resources>
+			<ContentPage.Content>
+				<ScrollView>
+				    <ListView ItemsSource="{Binding ReceivedWuis}" RowHeight = "100" SelectedItem="{Binding SelectedWui}">
+				    	<ListView.ItemTemplate>
+			    			<DataTemplate>
+			    				<ViewCell>
+			    					<Grid BackgroundColor="White">
+			    						<Grid.RowDefinitions>
+									      <RowDefinition Height="Auto" />
+									      <RowDefinition Height="Auto" />
+									      <RowDefinition Height="Auto" />
+									    </Grid.RowDefinitions>
+									    <Grid.ColumnDefinitions>
+									      <ColumnDefinition Width="Auto" />
+									      <ColumnDefinition Width="*" />
+									    </Grid.ColumnDefinitions>
+
+									    <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="{Binding Type, Converter={StaticResource ImageConverter}}"/>
+										<Label Grid.Row="0" Grid.Column="1" Text="{Binding Type}" FontSize="16" XAlign="Center"/>
+										<Label Grid.Row="1" Grid.Column="1" Text="{Binding Status}" FontSize="12"/>
+		    						</Grid>
+			    				</ViewCell>
+			    			</DataTemplate>
+				    	</ListView.ItemTemplate>
+				    </ListView>
+				</ScrollView>
+			</ContentPage.Content>
+		</ContentPage>
+<!--		<local:WuiListViewX x:Name="SentWuis" Title="Sent"  />
+		<local:WuiListViewX x:Name="ReceivedWuis" Title="Received"  />-->
+	</TabbedPage.Children>
+</TabbedPage>

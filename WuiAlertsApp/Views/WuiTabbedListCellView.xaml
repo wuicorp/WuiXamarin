@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WuiAlertsApp.Views.WuiTabbedListCellView">
+	<StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+		<Label Text="{Binding Id}"/>
+		<Label Text="{Binding Type}"/>
+		<Label Text="{Binding Action}"/>
+		<Label Text="{Binding Status}"/>
+	</StackLayout>
+</ViewCell>

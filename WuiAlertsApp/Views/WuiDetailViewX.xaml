@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:local="clr-namespace:WuiAlertsApp.Helpers;assembly=WuiAlertsApp"
+			 x:Class="WuiAlertsApp.Views.WuiDetailViewX"
+			 Title="Wui Details">
+	<ContentPage.Resources>
+		        <ResourceDictionary>
+		            <local:WuiTypeToImageConverter x:Key="ImageConverter"></local:WuiTypeToImageConverter>
+		        </ResourceDictionary>
+	        </ContentPage.Resources>
+			<ContentPage.Content>
+				<ScrollView>
+					<Grid>
+						<Grid.RowDefinitions>
+					      <RowDefinition Height="150" />
+					      <RowDefinition Height="Auto" />
+					      <RowDefinition Height="Auto" />
+					      <RowDefinition Height="*" />
+					      <RowDefinition Height="Auto" />
+					    </Grid.RowDefinitions>
+
+
+					    <Grid Grid.Row="0">
+					    	<Grid.ColumnDefinitions>
+				      			<ColumnDefinition Width="2*" />
+						      	<ColumnDefinition Width="3*" />
+						    </Grid.ColumnDefinitions>
+
+						    <Image Grid.Column="0" Source="{Binding Type, Converter={StaticResource ImageConverter}}" />
+						    <Label Grid.Column="1" Text="{Binding CurrentWui.Type}" FontSize="36" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+					    </Grid>
+					   
+						<Label Grid.Row="1" Grid.Column="0" Text="Type: " />
+						<Entry Grid.Row="2" Grid.Column="0" Text="{Binding CurrentWui.Type}" />
+
+						<Label Grid.Row="3" Grid.Column="0" Text="Status: " />
+						<Editor Grid.Row="4" Grid.Column="0"  Text="{Binding CurrentWui.Status}" />
+
+<!--						<Grid Grid.Row="5" >
+					    	<Grid.ColumnDefinitions>
+				      			<ColumnDefinition Width="*" />
+						      	<ColumnDefinition Width="*" />
+						    </Grid.ColumnDefinitions>
+
+							<Button  Grid.Column="0" Text="Save" VerticalOptions="Center"/>
+							<Button Grid.Column="1" Text="Cancel"  VerticalOptions="Center"/>
+						</Grid>-->
+
+					</Grid>
+				</ScrollView>
+			</ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,9 @@
+﻿<resources>
+	<style name="Theme.WuiAlertsApp" parent="android:Theme.Holo.Light">
+		<!-- Your customizations go here -->
+	</style>
+	<style name="Theme.Splash" parent="android:Theme">
+	    <item name="android:windowBackground">@drawable/splash</item>
+	    <item name="android:windowNoTitle">true</item>
+	  </style>
+</resources>

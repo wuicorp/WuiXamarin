@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Settings" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WuiAlertsApp.Views.SettingsListView">
+	<ContentPage.Content>
+		<TableView Intent="Settings" HasUnevenRows="true">
+			<TableRoot>
+			<TableSection Title="Notifications">
+					<ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Enable notification" VerticalOptions="Center"/>
+								<Switch Grid.Column="1" IsToggled="{Binding Notifications}" /> 
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+	                <ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Enable sound" VerticalOptions="Center"/>
+								<Switch Grid.Column="1" IsToggled="{Binding Sound}" /> 
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+				</TableSection>
+				<TableSection Title="Profile">
+<!--					<TextCell Text="Profile settings" Detail="Set all your profiles settings" Command="{Binding AddCharCommand}" CommandParameter="A"/>-->
+<!--					<EntryCell Label="Profile name"  Keyboard="Default" Placeholder="Nickname" />-->
+	                	<ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Profile Name" VerticalOptions="Center"/>
+								<Entry Grid.Column="1" Text="{Binding ProfileName, Mode=TwoWay}" Keyboard="Chat" /> 
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Language" VerticalOptions="Center"/>
+								<Picker Grid.Column="1" x:Name="languagesPicker" SelectedIndex="{Binding SelectedLanguage}"/>
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Email" VerticalOptions="Center"/>
+								<Entry Grid.Column="1" Text="{Binding Email, Mode=TwoWay}" Keyboard="Email" /> 
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell >
+	                    <ViewCell.View>
+	                        <Grid Padding="20,0,0,0">
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="Auto" />
+							      <ColumnDefinition Width="*" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Phone number" VerticalOptions="Center"/>
+								<Entry Grid.Column="1" Text="{Binding Phone, Mode=TwoWay}" Keyboard="Telephone" /> 
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+				</TableSection>
+			</TableRoot>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>

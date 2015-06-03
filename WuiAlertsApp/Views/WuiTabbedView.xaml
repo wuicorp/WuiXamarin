@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WuiAlertsApp.Views.WuiTabbedView">
+	 <TabbedPage.Children>
+<!--	    <ContentPage Title="Page 1"  />
+        <ContentPage Title="Page 2" />
+        <ContentPage Title="Page 3" />-->
+       
+		<ContentPage Icon="icon_messages.png" >
+ 			<WuiMenuView/>
+		</ContentPage>
+        <ContentPage Title="Page 2" Icon="icon_home.png" />
+        <ContentPage Title="Page 3" Icon="icon_settings.png" />
+    </TabbedPage.Children>
+</TabbedPage>

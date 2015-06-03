@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage Title="Profile" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="WuiAlertsApp.Views.ProfileListView">
+	<ContentPage.Content>
+		<TableView Intent="Settings" HasUnevenRows="true">
+			<TableRoot>
+				<TableSection Title="Section TextCell">
+					<TextCell Text="TextCell Text" />
+					<TextCell Text="{Binding Setting3}" Detail="{Binding Setting4}" />
+					<TextCell Text="Binded Command" Detail="{Binding Setting1}" Command="{Binding AddCharCommand}" CommandParameter="A"/>
+				</TableSection>
+				<TableSection Title="Section Switch">
+					<SwitchCell Height="80" Text="SwitchCell" />
+					<SwitchCell Height="80" Text="BindedCell" On="{Binding Setting2}" />
+				</TableSection>
+				<TableSection Title="Section EntryCell">
+					<EntryCell Label="Binded EntryCell" Text="{Binding Setting3}" Keyboard="Default" Placeholder="Default Keyboard" />
+					<EntryCell Label="Default EntryCell" Keyboard="Default" Placeholder="Default Keyboard" />
+					<EntryCell Label="Chat EntryCell" Keyboard="Chat" Placeholder="Chat Keyboard" />
+					<EntryCell Label="Email EntryCell" Keyboard="Email" Placeholder="Email Keyboard" />
+					<EntryCell Label="Numeric EntryCell" Keyboard="Numeric" Placeholder="Numeric Keyboard" />
+					<EntryCell Label="Telephone EntryCell" Keyboard="Telephone" Placeholder="Telephone Keyboard" />
+					<EntryCell Label="Text EntryCell" Keyboard="Text" Placeholder="Text Keyboard" />
+					<EntryCell Label="Url EntryCell" Keyboard="Url" Placeholder="Url Keyboard" />
+				</TableSection>
+				<TableSection Title="Section ImageCell">
+					<ImageCell Text="ImageCell" Detail="Image Cell Detail" ImageSource="icon_accident.png" />
+				</TableSection>
+				<TableSection Title="Section Custom">
+					<ViewCell>
+	                    <ViewCell.View>
+	                        <Grid>
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="*" />
+							      <ColumnDefinition Width="Auto" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="DatePicker"/>
+								<DatePicker Grid.Column="1" />
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell>
+	                    <ViewCell.View>
+	                        <Grid>
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="*" />
+							      <ColumnDefinition Width="Auto" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="TimePicker"/>
+								<TimePicker Grid.Column="1" />
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+	                <ViewCell>
+	                    <ViewCell.View>
+	                        <Grid>
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="*" />
+							      <ColumnDefinition Width="Auto" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Button"/>
+								<Button Grid.Column="1" />
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell>
+	                    <ViewCell.View>
+	                        <Grid>
+							    <Grid.ColumnDefinitions>
+							      <ColumnDefinition Width="*" />
+							      <ColumnDefinition Width="Auto" />
+							    </Grid.ColumnDefinitions>
+
+								<Label Grid.Column="0" Text="Picker"/>
+								<Picker Grid.Column="1" />
+    						</Grid>  
+	                    </ViewCell.View>
+	                </ViewCell>
+					<ViewCell>
+	                    <ViewCell.View>
+	                        <StackLayout Orientation="Horizontal" >
+	                        <BoxView Color="Red"></BoxView>
+	                        <StackLayout>
+	                            <Label Text="News Item 1"></Label>
+	                            <Label Text="News URL 1"></Label>
+	                        </StackLayout>
+	                        <BoxView x:Name="boxView" Color="Blue" ></BoxView>
+	                        </StackLayout>      
+	                    </ViewCell.View>
+	                </ViewCell>
+				</TableSection>
+			</TableRoot>
+		</TableView>
+	</ContentPage.Content>
+</ContentPage>
